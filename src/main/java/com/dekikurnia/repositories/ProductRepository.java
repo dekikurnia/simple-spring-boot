@@ -6,7 +6,7 @@
 package com.dekikurnia.repositories;
 
 import com.dekikurnia.entities.Product;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  * @author dekikurnia
  */
 @Repository("productRepository")
-public interface ProductRepository extends JpaRepository<Product, Integer>{
+public interface ProductRepository extends CrudRepository<Product, Integer>{
     
 }

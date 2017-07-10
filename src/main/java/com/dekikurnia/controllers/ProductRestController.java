@@ -24,13 +24,13 @@ public class ProductRestController {
     @Autowired
     private ProductService productService;
     
-    @RequestMapping(path="/products", method=RequestMethod.GET)
-    public List <Product> getAllProducts() {
+    @RequestMapping(path="/api/products", method=RequestMethod.GET)
+    public Iterable <Product> getAllProducts() {
         return productService.getAllProducts();
     }
     
-    @RequestMapping(path="/products/{id}", method=RequestMethod.GET)
-    public List <Product> getProductById(@PathVariable("id") Integer id) {
+    @RequestMapping(path="/api/products/{id}", method=RequestMethod.GET)
+    public Iterable <Product> getProductById(@PathVariable("id") Integer id) {
         return productService.getAllProducts();
     }
 }

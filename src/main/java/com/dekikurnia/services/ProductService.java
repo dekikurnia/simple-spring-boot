@@ -14,6 +14,8 @@ import java.util.List;
  */
 public interface ProductService {
     
-    public List<Product> getAllProducts();
+    Iterable<Product> getAllProducts();
     public Product getProductById(Integer id);
+    Product saveProduct(Product product);
+    void deleteProduct(Integer id);
 }

@@ -5,15 +5,21 @@
  */
 $(document).ready (function() {
 var table = $('#productsTable').DataTable({
-			"sAjaxSource": "/products",
+                        buttons: ['excel', 'pdf'],
+			"sAjaxSource": "/api/products",
 			"sAjaxDataProp": "",
 			"order": [[ 0, "asc" ]],
-			"aoColumns": [
+			"columns": [
 			        { "mData": "id"},
                                 { "mData": "name" },
 				{ "mData": "price" },
 				{ "mData": "productId" },
-				{ "mData": "version" }
+				{ "mData": "version" },
+                                {"mRender": function (data) {
+                                return '<a class="btn btn-primary">Edit</a> | \n\
+                                <a class="btn btn-danger" onclick="javascript:return confirm(\'Anda yakin?\');">Delete</a>';
+                                    }
+                                }
 			]
 	 })
 });
