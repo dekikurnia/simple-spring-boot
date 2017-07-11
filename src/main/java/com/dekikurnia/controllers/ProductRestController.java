@@ -7,7 +7,6 @@ package com.dekikurnia.controllers;
 
 import com.dekikurnia.entities.Product;
 import com.dekikurnia.services.ProductService;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +29,7 @@ public class ProductRestController {
     }
     
     @RequestMapping(path="/api/products/{id}", method=RequestMethod.GET)
-    public Iterable <Product> getProductById(@PathVariable("id") Integer id) {
-        return productService.getAllProducts();
+    public Product getProductById(@PathVariable("id") Integer id) {
+        return productService.getProductById(id);
     }
 }
